@@ -1,10 +1,12 @@
 
 
 import './App.css'
-
+import Todo from './Todo'
 function App() {
   return (
     <>
+    <Todo task="sleep" isDone={true}></Todo>
+    <Todo task="shower" isDone={false}></Todo>
      <Person></Person>
      <Student></Student>
      <Device name="laptop" brand="Dell" price="40000"></Device>
