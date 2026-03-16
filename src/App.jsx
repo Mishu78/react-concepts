@@ -10,6 +10,7 @@ function App() {
      <Device name="laptop" brand="Dell" price="40000"></Device>
      <Device name="mobile" brand="Redmi" price="15000"></Device>
      <Device name="TV" brand="Sony" price="60000"></Device>
+     <Salami event="roja eid"amount="1000"></Salami>
     </>
   )
 
@@ -49,6 +50,16 @@ return (
   </div>
 )
 
+}
+
+function Salami({event,amount}){
+  return (
+
+    <div className="student">
+      <p>Salami for:{event}</p>
+      <p>Amount:{amount}</p>
+      </div>
+  )
 }
 
 export default App
