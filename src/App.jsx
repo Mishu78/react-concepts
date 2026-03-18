@@ -2,9 +2,20 @@
 
 import './App.css'
 import Todo from './Todo'
+import Family from './Family'
 function App() {
+  const families=[
+    {name:"Abdul Matin",age:68,relation:"Abbu"},
+    {name:"Rehena Begum",age:58,relation:"Ammu"},
+    {name:"Yasin Ali Rubel",age:40,relation:"Vaiya"},
+    {name:"Fatima Akter Mitu",age:44,relation:"Apu"},
+  ];
+  
   return (
     <>
+    {
+      families.map(family=><Family family={family}></Family>)
+    }
     <Todo task="sleep" isDone={true}></Todo>
     <Todo task="shower" isDone={false}></Todo>
      <Person></Person>
