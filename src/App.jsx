@@ -3,6 +3,7 @@
 import './App.css'
 import Todo from './Todo'
 import Family from './Family'
+//import ClickButton from './ClickButton'
 function App() {
   const families=[
     {name:"Abdul Matin",age:68,relation:"Abbu"},
@@ -10,9 +11,27 @@ function App() {
     {name:"Yasin Ali Rubel",age:40,relation:"Vaiya"},
     {name:"Fatima Akter Mitu",age:44,relation:"Apu"},
   ];
+
+  function handleClick(){
+          alert("I am clicked");
+      }
+      const handleClick3=()=>{
+        alert("click 3");
+      }
+      const handleAdd=(num)=>{
+        const newNum=num+5;
+        alert(newNum);
+      }
   
   return (
     <>
+    
+ <button onClick={handleClick}>Click Me</button>
+ <button onClick={function handleClick(){alert('click2')}}>Click Me</button>
+ <button onClick={handleClick3}>Click Me</button>
+ <button onClick={()=>handleAdd(5)}>Click Me</button>
+    
+   
     {
       families.map(family=><Family family={family}></Family>)
     }
