@@ -6,6 +6,12 @@ import Family from './Family'
 //import ClickButton from './ClickButton'
 import Counter from './Counter'
 import Baller from './Baller'
+import Users from "./Users"
+import { Suspense } from 'react'
+
+
+const fetchUsers= fetch('https://jsonplaceholder.typicode.com/users')
+.then(res=>res.json())
 function App() {
   const families=[
     {name:"Abdul Matin",age:68,relation:"Abbu"},
@@ -27,6 +33,9 @@ function App() {
   
   return (
     <>
+    <Suspense fallback={<h3>Loading.....</h3>}>
+      <Users fetchUsers={fetchUsers}></Users>
+    </Suspense>
     <Baller></Baller>
     <Counter></Counter>
 
