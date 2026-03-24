@@ -26,7 +26,8 @@ function App() {
   
   return (
     <>
-    
+    <Counter></Counter>
+
  <button onClick={handleClick}>Click Me</button>
  <button onClick={function handleClick(){alert('click2')}}>Click Me</button>
  <button onClick={handleClick3}>Click Me</button>
