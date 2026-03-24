@@ -6,7 +6,7 @@ export default function Counter(){
      let newCount=count+1;
      setCount(newCount);
     }
-    let counterStyle={
+    const counterStyle={
         border:'2px solid black',
         gap:'10px',
         padding:'10px',
