@@ -4,6 +4,7 @@ import './App.css'
 import Todo from './Todo'
 import Family from './Family'
 //import ClickButton from './ClickButton'
+import Counter from './Counter'
 function App() {
   const families=[
     {name:"Abdul Matin",age:68,relation:"Abbu"},
