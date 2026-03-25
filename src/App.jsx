@@ -9,6 +9,7 @@ import Baller from './Baller'
 import Users from "./Users"
 import { Suspense } from 'react'
 import Friends from './Friends'
+import Posts from './Posts'
 
 
 const fetchFriends=async()=>{
@@ -17,7 +18,13 @@ const fetchFriends=async()=>{
 }
 const fetchUsers= fetch('https://jsonplaceholder.typicode.com/users')
 .then(res=>res.json())
+
+const fetchPosts=async()=>{
+const res=await fetch('https://jsonplaceholder.typicode.com/posts')
+return res.json();
+}
 function App() {
+  const postsPromise=fetchPosts();
   const fetchPromise =fetchFriends();
   const families=[
     {name:"Abdul Matin",age:68,relation:"Abbu"},
@@ -39,6 +46,9 @@ function App() {
   
   return (
     <>
+    <Suspense fallback={<h4>Posts are coming...</h4>}>
+    <Posts postsPromise={postsPromise}></Posts>
+    </Suspense>
     <Suspense fallback={<h3>This is friends data</h3>}>
       <Friends fetchPromise={fetchPromise}></Friends>
     </Suspense>
